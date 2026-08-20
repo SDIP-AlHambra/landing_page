@@ -1,0 +1,151 @@
+.visiMisiSection {
+  background-color: var(--white);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.visiCard {
+  background-color: var(--cream);
+  padding: 3.5rem 3rem;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Thick Maroon line accent on the left */
+.visiAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: var(--maroon);
+}
+
+.cardLabel {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold-dark);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.visiQuote {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--maroon);
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+}
+
+.arabesqueDecoration {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20L40 0L40 40z' fill='%238c1c13' fill-rule='evenodd'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.misiCard {
+  background-color: var(--white);
+  padding: 3.5rem 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.misiList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.misiItem {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background-color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.misiItem:hover .iconWrapper {
+  transform: scale(1.1) rotate(5deg);
+  background-color: var(--white);
+  border-color: var(--maroon);
+}
+
+.misiText p {
+  font-size: 1.05rem;
+  color: var(--dark);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .visiCard {
+    padding: 3rem 2.5rem;
+  }
+
+  .visiQuote {
+    font-size: 1.6rem;
+  }
+
+  .misiCard {
+    padding: 3rem 2.5rem;
+  }
+}

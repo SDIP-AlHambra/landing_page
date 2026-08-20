@@ -1,0 +1,147 @@
+.facilitiesSection {
+  background-color: var(--cream);
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.facilityCard {
+  display: flex;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: var(--transition-smooth);
+}
+
+.facilityCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.imageColumn {
+  position: relative;
+  flex: 0 0 45%;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.facilityImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.facilityCard:hover .facilityImage {
+  transform: scale(1.05);
+}
+
+/* Linear gradient overlay: Fades from transparent on the left to white on the right */
+.fadeOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 1) 100%);
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.infoColumn {
+  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.facilityTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--maroon);
+  margin-bottom: 1rem;
+}
+
+.quoteBox {
+  border-left: 3px solid var(--gold);
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.quoteText {
+  font-size: 0.95rem;
+  color: var(--gold-dark);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.quoteSource {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .imageColumn {
+    flex: 0 0 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .facilityCard {
+    flex-direction: column;
+  }
+
+  .imageColumn {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 220px;
+    min-height: auto;
+  }
+
+  /* Fade gradient changes to bottom fade on mobile */
+  .fadeOverlay {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 1) 100%);
+  }
+
+  .infoColumn {
+    padding: 2rem 1.5rem;
+  }
+
+  .facilityTitle {
+    font-size: 1.5rem;
+  }
+}
