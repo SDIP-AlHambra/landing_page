@@ -30,7 +30,6 @@ export default function VisiMisi() {
     <section id="visi-misi" className={styles.visiMisiSection}>
       <div className="container">
         <div className={styles.sectionHeader}>
-          <span className="badge-gold">Haluan Pendidikan</span>
           <h2 className={styles.sectionTitle}>Visi & Misi Sekolah</h2>
           <p className={styles.sectionSubtitle}>Landasan utama kami dalam mendidik generasi penerus yang cerdas dan bertaqwa.</p>
         </div>

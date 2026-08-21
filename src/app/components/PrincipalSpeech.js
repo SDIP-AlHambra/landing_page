@@ -27,7 +27,6 @@ export default function PrincipalSpeech() {
 
           {/* Right Column: Speech Text */}
           <div className={styles.speechContent}>
-            <span className="badge-gold">{KepalaSekolah.welcomeSpeech.pembukaan}</span>
             <h2 className={styles.title}>Membimbing dengan Kasih, Mendidik dengan Al-Qur'an</h2>
             <div className={styles.textBlock}>
               {KepalaSekolah.welcomeSpeech.isi.map((paragraph, index) => (

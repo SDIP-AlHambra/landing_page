@@ -1,6 +1,4 @@
 .heroSection {
-  padding-top: 9rem;
-  padding-bottom: 6rem;
   background-color: var(--cream);
   position: relative;
   overflow: hidden;
@@ -94,21 +92,38 @@
   width: 100%;
 }
 
-.videoOuterFrame {
+.imageOuterFrame {
   width: 100%;
   max-width: 500px;
-  padding: 8px;
-  border: 1px solid rgba(197, 160, 89, 0.3);
+  height: 480px; /* Tall frame to showcase the image fully */
+  padding: 10px;
+  border: 1px solid rgba(197, 160, 89, 0.35);
   background: white;
-  border-radius: calc(var(--radius-md) + 8px);
-  box-shadow: 0 20px 40px rgba(140, 28, 19, 0.1), var(--shadow-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 10px 30px rgba(140, 28, 19, 0.05);
+  overflow: hidden;
   transition: var(--transition-smooth);
 }
 
-.videoOuterFrame:hover {
+.imageOuterFrame:hover {
   transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(140, 28, 19, 0.15), 0 10px 20px rgba(197, 160, 89, 0.25);
+  box-shadow: var(--shadow-lg), 0 15px 40px rgba(197, 160, 89, 0.2);
   border-color: var(--gold);
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* object-position to crop a little bit of the bottom and left */
+  object-position: 85% 15%; 
+  border-radius: calc(var(--radius-lg) - 10px);
+  transform: scale(1.08); /* Zoomed in slightly to crop and focus */
+  transition: var(--transition-smooth);
+}
+
+.imageOuterFrame:hover .heroImage {
+  transform: scale(1.12);
 }
 
 .breakOnMobile {
@@ -121,6 +136,9 @@
   }
   .jargon {
     font-size: 1.5rem;
+  }
+  .imageOuterFrame {
+    height: 400px;
   }
 }
 
@@ -151,5 +169,10 @@
 
   .jargon {
     min-height: 60px;
+  }
+
+  .imageOuterFrame {
+    height: 320px;
+    max-width: 450px;
   }
 }

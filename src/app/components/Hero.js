@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
-import { Play, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import styles from './Hero.module.css';
 import { heroData } from '../../data/heroData';
 import { siteConfig } from '../../data/siteConfig';
@@ -38,7 +38,6 @@ export default function Hero() {
         <div className={styles.grid}>
           {/* Left Column: Text Content */}
           <div className={styles.content}>
-            <span className="badge-gold">{heroData.pembukaan}</span>
             <h1 className={styles.title}>
               Selamat Datang di <br />
               <span className={styles.highlight}>SDIP Al-Hambra</span>
@@ -60,20 +59,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Responsive Video Embed */}
+          {/* Right Column: School Image (halaman_depan.jpg) side-by-side */}
           <div className={styles.mediaContainer}>
-            <div className={styles.videoOuterFrame}>
-              <div className="video-responsive">
-                <iframe
-                  width="560"
-                  height="315"
-                  src={`https://www.youtube.com/embed/${heroData.youtubeVideoId}?autoplay=0`}
-                  title="Video Profil SDIP Al-Hambra"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
+            <div className={styles.imageOuterFrame}>
+              <img
+                src="/image/halaman_depan.jpg"
+                alt="Gedung SDIP Al-Hambra"
+                className={styles.heroImage}
+              />
             </div>
           </div>
         </div>

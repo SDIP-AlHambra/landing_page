@@ -1,7 +1,7 @@
 export const KepalaSekolah = {
-  name: "Imam M Dipo",
+  name: "Muharoh Jemah, M.Pd",
   role: "Kepala Sekolah SDIP Al-Hambra",
-  foto: "/image/Foto_Dipo.png", // Sementara arahkan ke anchor atau link WA form
+  foto: "/image/Kepala_Sekolah.JPG", 
   welcomeSpeech: {
     pembukaan: "SAMBUTAN KEPALA SEKOLAH",
     isi: [

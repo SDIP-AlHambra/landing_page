@@ -26,7 +26,7 @@
   height: 100%;
   position: relative;
   background: var(--white);
-  padding: 12px;
+  /* padding: 12px; */
   box-shadow: var(--shadow-lg);
   border: 4px solid var(--gold);
   border-radius: var(--radius-md);

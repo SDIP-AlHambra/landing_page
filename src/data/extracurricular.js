@@ -14,4 +14,9 @@ export const eskul = [
     title: "Tari",
     image: "/image/eskul/eskul_tari.jpeg"
 },
+{
+    id: 4,
+    title: "Futsal",
+    image: "/image/eskul/eskul_futsal.jpeg"
+},
 ];

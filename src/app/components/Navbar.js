@@ -62,7 +62,11 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button className={styles.mobileToggle} onClick={toggleMenu} aria-label="Toggle Menu">
-          {isMenuOpen ? <X size={24} color="#8C1C13" /> : <Menu size={24} color="#8C1C13" />}
+          {isMenuOpen ? (
+            <X size={24} color="var(--maroon)" />
+          ) : (
+            <Menu size={24} color={isScrolled ? "var(--maroon)" : "var(--white)"} />
+          )}
         </button>
       </div>
 

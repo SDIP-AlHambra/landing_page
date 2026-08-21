@@ -21,7 +21,6 @@ export default function Extracurricular() {
     <section id="ekskul" className={styles.eskulSection}>
       <div className="container">
         <div className={styles.sectionHeader}>
-          <span className="badge-gold">Minat & Bakat</span>
           <h2 className={styles.sectionTitle}>Ekstrakurikuler</h2>
           <p className={styles.sectionSubtitle}>
             Wadah pengembangan diri santri untuk menyalurkan minat, bakat, serta ketangkasan jasmani dan rohani.

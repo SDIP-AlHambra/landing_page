@@ -8,7 +8,6 @@ export default function Facilities() {
     <section id="fasilitas" className={styles.facilitiesSection}>
       <div className="container">
         <div className={styles.sectionHeader}>
-          <span className="badge-gold">Sarana & Prasarana</span>
           <h2 className={styles.sectionTitle}>Fasilitas Sekolah</h2>
           <p className={styles.sectionSubtitle}>
             Dukungan fasilitas belajar kondusif yang mengintegrasikan aspek akademis dengan nilai-nilai luhur Sunnah Rasulullah SAW.

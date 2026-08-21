@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import VideoSection from './components/VideoSection';
 import StatsBanner from './components/StatsBanner';
 import PrincipalSpeech from './components/PrincipalSpeech';
 import VisiMisi from './components/VisiMisi';
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <main style={{ flex: '1 0 auto' }}>
         <Hero />
+        <VideoSection />
         <StatsBanner />
         <PrincipalSpeech />
         <VisiMisi />
