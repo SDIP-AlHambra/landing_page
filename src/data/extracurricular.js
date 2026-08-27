@@ -1,22 +1,30 @@
 export const eskul = [
 {
-    id: 1,
     title: "Marawis",
     image: "/image/eskul/eskul_marawis.png"
 },
 {
-    id: 2,
-    title: "silat",
+    title: "Silat",
     image: "/image/eskul/eskul_silat.jpeg"
 },
 {
-    id: 3,
     title: "Tari",
     image: "/image/eskul/eskul_tari.jpeg"
 },
 {
-    id: 4,
     title: "Futsal",
     image: "/image/eskul/eskul_futsal.jpeg"
+},
+{
+    title: "Bulu tangkis",
+    image: "/image/eskul/eskul_bulutangkis.jpg"
+},
+{
+    title: "Pramuka",
+    image: "/image/eskul/eskul_pramuka.jpg"
+},
+{
+    title: "Melukis",
+    image: "/image/eskul/eskul_melukis.jpg"
 },
 ];
