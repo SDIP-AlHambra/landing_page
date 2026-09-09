@@ -1,4 +1,4 @@
-import { client } from './client'
+import { client } from './client.js'
 
 export const categoryMap = {
   kegiatan: 'Kegiatan Sekolah',
@@ -34,6 +34,8 @@ export function extractSnippet(body, maxLength = 160) {
   return text.substring(0, maxLength).trim() + '...'
 }
 
+const noCacheOptions = { next: { revalidate: 0 } }
+
 // Fetch all posts ordered by date
 export async function getAllPosts() {
   try {
@@ -47,7 +49,9 @@ export async function getAllPosts() {
         publishedAt,
         mainImage,
         body
-      }`
+      }`,
+      {},
+      noCacheOptions
     )
     return posts.map((post) => ({
       ...post,
@@ -74,7 +78,8 @@ export async function getPostBySlug(slug) {
         mainImage,
         body
       }`,
-      { slug }
+      { slug },
+      noCacheOptions
     )
     return post
   } catch (error) {
@@ -96,7 +101,8 @@ export async function getRecentPosts(excludeSlug, limit = 3) {
         mainImage,
         body
       }`,
-      { excludeSlug: excludeSlug || '', limit }
+      { excludeSlug: excludeSlug || '', limit },
+      noCacheOptions
     )
     return posts.map((post) => ({
       ...post,
@@ -122,7 +128,8 @@ export async function getTopNewsSnippets(limit = 3) {
         mainImage,
         body
       }`,
-      { limit }
+      { limit },
+      noCacheOptions
     )
     return posts.map((post) => ({
       ...post,

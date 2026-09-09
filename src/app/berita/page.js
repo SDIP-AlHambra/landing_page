@@ -10,8 +10,8 @@ export const metadata = {
   description: `Ikuti kabar terkini, agenda kegiatan, prestasi siswa, dan pengumuman resmi dari ${siteConfig.name}.`,
 };
 
-// Revalidate data every 30 seconds or on demand
-export const revalidate = 30;
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function BeritaPage() {
   const posts = await getAllPosts();

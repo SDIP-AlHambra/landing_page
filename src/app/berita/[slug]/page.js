@@ -10,7 +10,8 @@ import { urlFor } from '@/sanity/client';
 import { getPostBySlug, getRecentPosts, categoryMap, formatDate } from '@/sanity/queries';
 import { siteConfig } from '@/data/siteConfig';
 
-export const revalidate = 30;
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function generateMetadata({ params }) {
   const post = await getPostBySlug(params.slug);
