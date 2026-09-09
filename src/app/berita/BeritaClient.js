@@ -9,17 +9,25 @@ import { categoryMap, formatDate } from '@/sanity/queries';
 export default function BeritaClient({ posts = [] }) {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Determine top/featured article
-  const featuredPost = posts.find((p) => p.isFeatured) || posts[0] || null;
-  const regularPosts = featuredPost ? posts.filter((p) => p._id !== featuredPost._id) : posts;
+  // Any and all posts with isFeatured === true are placed in the top area
+  const explicitFeatured = posts.filter((p) => p.isFeatured);
 
-  // Filter regular posts by category
+  // If no post is explicitly marked as featured, fallback to the latest 1 post
+  const featuredPosts = explicitFeatured.length > 0
+    ? explicitFeatured
+    : (posts.length > 0 ? [posts[0]] : []);
+
+  const featuredIds = new Set(featuredPosts.map((p) => p._id));
+  const regularPosts = posts.filter((p) => !featuredIds.has(p._id));
+
+  // Category filtering
+  const filteredFeaturedPosts = selectedCategory === 'all'
+    ? featuredPosts
+    : featuredPosts.filter((p) => p.category === selectedCategory);
+
   const filteredRegularPosts = selectedCategory === 'all'
     ? regularPosts
     : regularPosts.filter((p) => p.category === selectedCategory);
-
-  // Check if featured post matches the active filter
-  const showFeaturedInFilter = featuredPost && (selectedCategory === 'all' || featuredPost.category === selectedCategory);
 
   const getImageUrl = (imageSource, width = 800, height = 500) => {
     if (!imageSource?.asset) return '/image/halaman_depan.jpg';
@@ -43,40 +51,94 @@ export default function BeritaClient({ posts = [] }) {
           </p>
         </header>
 
-        {/* Featured / Top Article */}
-        {showFeaturedInFilter && featuredPost && (
+        {/* Featured / Top Articles Area (Bisa 1 atau Lebih) */}
+        {filteredFeaturedPosts.length > 0 && (
           <section className={styles.featuredSection} aria-label="Berita Utama">
-            <Link href={`/berita/${featuredPost.slug}`} className={styles.featuredCard}>
-              <div className={styles.featuredImageWrapper}>
-                <img
-                  src={getImageUrl(featuredPost.mainImage, 900, 600)}
-                  alt={featuredPost.title}
-                  className={styles.featuredImage}
-                />
+            <div className={styles.featuredSectionHeader}>
+              <div className={styles.featuredSectionLabel}>
+                <Sparkles size={15} />
+                <span>Berita Utama {filteredFeaturedPosts.length > 1 ? `(${filteredFeaturedPosts.length})` : ''}</span>
               </div>
-              <div className={styles.featuredContent}>
-                <div className={styles.topBadge}>
-                  <Sparkles size={14} />
-                  <span>Berita Utama</span>
+            </div>
+
+            {/* If exactly 1 featured article: display wide horizontal card */}
+            {filteredFeaturedPosts.length === 1 ? (
+              <Link
+                href={`/berita/${filteredFeaturedPosts[0].slug}`}
+                className={styles.featuredSingleCard}
+              >
+                <div className={styles.featuredImageWrapper}>
+                  <img
+                    src={getImageUrl(filteredFeaturedPosts[0].mainImage, 900, 600)}
+                    alt={filteredFeaturedPosts[0].title}
+                    className={styles.featuredImage}
+                  />
                 </div>
-                <div className={styles.metaRow}>
-                  <span className={styles.categoryTag}>
-                    {categoryMap[featuredPost.category] || 'Umum'}
-                  </span>
-                  <span className={styles.dateText}>
-                    <Calendar size={14} />
-                    {formatDate(featuredPost.publishedAt)}
+                <div className={styles.featuredContent}>
+                  <div className={styles.topBadge}>
+                    <Sparkles size={14} />
+                    <span>Berita Utama</span>
+                  </div>
+                  <div className={styles.metaRow}>
+                    <span className={styles.categoryTag}>
+                      {categoryMap[filteredFeaturedPosts[0].category] || 'Umum'}
+                    </span>
+                    <span className={styles.dateText}>
+                      <Calendar size={14} />
+                      {formatDate(filteredFeaturedPosts[0].publishedAt)}
+                    </span>
+                  </div>
+                  <h2 className={styles.featuredTitle}>{filteredFeaturedPosts[0].title}</h2>
+                  <p className={styles.featuredSnippet}>
+                    {filteredFeaturedPosts[0].snippet || 'Klik untuk membaca laporan dan ulasan lengkap kegiatan ini.'}
+                  </p>
+                  <span className="btn btn-primary">
+                    Baca Selengkapnya <ArrowRight size={18} />
                   </span>
                 </div>
-                <h2 className={styles.featuredTitle}>{featuredPost.title}</h2>
-                <p className={styles.featuredSnippet}>
-                  {featuredPost.snippet || 'Klik untuk membaca laporan dan ulasan lengkap kegiatan ini.'}
-                </p>
-                <span className="btn btn-primary">
-                  Baca Selengkapnya <ArrowRight size={18} />
-                </span>
+              </Link>
+            ) : (
+              /* If multiple featured articles: display responsive grid of featured cards */
+              <div className={styles.featuredGrid}>
+                {filteredFeaturedPosts.map((post) => (
+                  <Link
+                    key={post._id}
+                    href={`/berita/${post.slug}`}
+                    className={styles.featuredGridCard}
+                  >
+                    <div className={styles.featuredGridImageWrapper}>
+                      <img
+                        src={getImageUrl(post.mainImage, 700, 440)}
+                        alt={post.title}
+                        className={styles.featuredImage}
+                      />
+                    </div>
+                    <div className={styles.featuredContent}>
+                      <div className={styles.topBadge}>
+                        <Sparkles size={14} />
+                        <span>Berita Utama</span>
+                      </div>
+                      <div className={styles.metaRow}>
+                        <span className={styles.categoryTag}>
+                          {categoryMap[post.category] || 'Umum'}
+                        </span>
+                        <span className={styles.dateText}>
+                          <Calendar size={14} />
+                          {formatDate(post.publishedAt)}
+                        </span>
+                      </div>
+                      <h2 className={styles.featuredTitle}>{post.title}</h2>
+                      <p className={styles.featuredSnippet}>
+                        {post.snippet || 'Klik untuk membaca laporan dan ulasan lengkap kegiatan ini.'}
+                      </p>
+                      <span className={styles.readMoreLink} style={{ marginTop: 'auto' }}>
+                        Baca Selengkapnya <ArrowRight size={16} />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
               </div>
-            </Link>
+            )}
           </section>
         )}
 
@@ -113,15 +175,15 @@ export default function BeritaClient({ posts = [] }) {
         </nav>
 
         {/* Regular News Grid */}
-        <section aria-label="Daftar Berita">
+        <section aria-label="Daftar Berita Lainnya">
           <div className={styles.gridHeader}>
             <h3 className={styles.gridHeading}>
               {selectedCategory === 'all'
-                ? 'Semua Kabar Terkini'
+                ? (filteredFeaturedPosts.length > 0 ? 'Berita & Kegiatan Lainnya' : 'Semua Kabar Terkini')
                 : `Kategori: ${categoryMap[selectedCategory] || selectedCategory}`}
             </h3>
             <span className={styles.articleCount}>
-              {filteredRegularPosts.length + (showFeaturedInFilter && featuredPost ? 1 : 0)} Artikel
+              {filteredRegularPosts.length + filteredFeaturedPosts.length} Artikel
             </span>
           </div>
 
@@ -159,7 +221,7 @@ export default function BeritaClient({ posts = [] }) {
                 </Link>
               ))}
             </div>
-          ) : !showFeaturedInFilter ? (
+          ) : filteredFeaturedPosts.length === 0 ? (
             <div className={styles.emptyState}>
               <Newspaper size={44} color="#8C1C13" style={{ marginBottom: '1rem', opacity: 0.6 }} />
               <h4 className={styles.emptyTitle}>Belum Ada Berita</h4>
