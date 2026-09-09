@@ -176,3 +176,12 @@
     display: block;
   }
 }
+
+.activeNavLink {
+  color: var(--maroon) !important;
+}
+
+.activeNavLink::after {
+  width: 100% !important;
+  background-color: var(--maroon) !important;
+}

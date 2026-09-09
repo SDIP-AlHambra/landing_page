@@ -7,6 +7,7 @@ import PrincipalSpeech from './components/PrincipalSpeech';
 import VisiMisi from './components/VisiMisi';
 import Facilities from './components/Facilities';
 import Extracurricular from './components/Extracurricular';
+import NewsSnippet from './components/NewsSnippet';
 import CtaBanner from './components/CtaBanner';
 import Footer from './components/Footer';
 
@@ -22,6 +23,7 @@ export default function Home() {
         <VisiMisi />
         <Facilities />
         <Extracurricular />
+        <NewsSnippet />
         <CtaBanner />
       </main>
       <Footer />

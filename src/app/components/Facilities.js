@@ -15,8 +15,8 @@ export default function Facilities() {
         </div>
 
         <div className={styles.cardsContainer}>
-          {facilities.map((fac) => (
-            <div key={fac.id} className={styles.facilityCard}>
+          {facilities.map((fac, index) => (
+            <div key={fac.id || fac.title || index} className={styles.facilityCard}>
               {/* Left Column: Image with shading/fade-out gradient */}
               <div className={styles.imageColumn}>
                 <img

@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Link from 'next/link';
 import { Phone, Mail, MapPin, Youtube, Instagram, Facebook, MessageSquare } from 'lucide-react';
 import styles from './Footer.module.css';
 import { siteConfig } from '../../data/siteConfig';
@@ -35,11 +36,12 @@ export default function Footer() {
           <div className={styles.linksCol}>
             <h4 className={styles.title}>Navigasi</h4>
             <ul className={styles.linksList}>
-              <li><a href="#tentang">Tentang</a></li>
-              <li><a href="#visi-misi">Visi & Misi</a></li>
-              <li><a href="#fasilitas">Fasilitas</a></li>
-              <li><a href="#ekskul">Ekstrakurikuler</a></li>
-              <li><a href="#kontak">Hubungi Kami</a></li>
+              <li><Link href="/#tentang">Tentang</Link></li>
+              <li><Link href="/#visi-misi">Visi & Misi</Link></li>
+              <li><Link href="/#fasilitas">Fasilitas</Link></li>
+              <li><Link href="/#ekskul">Ekstrakurikuler</Link></li>
+              <li><Link href="/berita">Berita & Kegiatan</Link></li>
+              <li><Link href="/#kontak">Hubungi Kami</Link></li>
             </ul>
           </div>
 

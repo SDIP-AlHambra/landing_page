@@ -28,8 +28,8 @@ export default function Extracurricular() {
         </div>
 
         <div className={styles.grid}>
-          {eskul.map((item) => (
-            <div key={item.id} className={styles.card} onClick={() => openLightbox(item)}>
+          {eskul.map((item, index) => (
+            <div key={item.id || item.title || index} className={styles.card} onClick={() => openLightbox(item)}>
               <div className={styles.imageContainer}>
                 <img
                   src={item.image}
