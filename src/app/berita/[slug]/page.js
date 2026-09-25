@@ -20,9 +20,29 @@ export async function generateMetadata({ params }) {
       title: `Berita Tidak Ditemukan - ${siteConfig.name}`,
     };
   }
+  let postImageUrl = '/apple-touch-icon.png';
+  if (post.mainImage?.asset) {
+    try {
+      postImageUrl = urlFor(post.mainImage).width(1200).height(630).url();
+    } catch {
+      postImageUrl = '/apple-touch-icon.png';
+    }
+  }
   return {
     title: `${post.title} - ${siteConfig.name}`,
-    description: `Baca selengkapnya artikel ${post.title} di website resmi ${siteConfig.name}.`,
+    description: post.snippet || `Baca selengkapnya artikel ${post.title} di website resmi ${siteConfig.name}.`,
+    openGraph: {
+      title: `${post.title} - ${siteConfig.name}`,
+      description: post.snippet || `Baca selengkapnya artikel ${post.title} di website resmi ${siteConfig.name}.`,
+      images: [
+        {
+          url: postImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
   };
 }
 

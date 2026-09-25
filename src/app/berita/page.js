@@ -8,6 +8,18 @@ import { siteConfig } from '@/data/siteConfig';
 export const metadata = {
   title: `Berita & Kegiatan - ${siteConfig.name}`,
   description: `Ikuti kabar terkini, agenda kegiatan, prestasi siswa, dan pengumuman resmi dari ${siteConfig.name}.`,
+  openGraph: {
+    title: `Berita & Kegiatan - ${siteConfig.name}`,
+    description: `Ikuti kabar terkini, agenda kegiatan, prestasi siswa, dan pengumuman resmi dari ${siteConfig.name}.`,
+    images: [
+      {
+        url: '/apple-touch-icon.png',
+        width: 180,
+        height: 180,
+        alt: `Logo ${siteConfig.name}`,
+      },
+    ],
+  },
 };
 
 export const dynamic = 'force-dynamic';
