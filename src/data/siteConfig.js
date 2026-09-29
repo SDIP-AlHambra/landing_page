@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Membentuk Generasi Qur'ani, Cerdas, dan Berkarakter",
   ppdbLink: "#pendaftaran",
   contact: {
-    whatsapp: "085814275725",
+    whatsapp: "895329120461",
     phone: "02172780139",
     email: "info@sdipalhambra.sch.id",
     address: "JL. Kubur Islam Rt. 10 Rw. 10 No. 55A Grogol Selatan, Kebayoran Lama,Jakarta Selatan",
@@ -14,4 +14,4 @@ export const siteConfig = {
     instagram: "https://instagram.com/sdipalhambra",
     facebook: "https://facebook.com/sdipalhambra"
   }
-}; 
+};
