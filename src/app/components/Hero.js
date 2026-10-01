@@ -28,8 +28,12 @@ export default function Hero() {
 
   const getWaLink = () => {
     const cleanWa = siteConfig.contact.whatsapp.replace(/\D/g, '');
-    const waNumber = cleanWa.startsWith('0') ? '62' + cleanWa.substring(1) : cleanWa;
-    return `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Admin%20SDIP%20Al-Hambra,%20saya%20ingin%20tanya%20mengenai%20pendaftaran%20PPDB.`;
+    const waNumber = cleanWa.startsWith('62')
+      ? cleanWa
+      : cleanWa.startsWith('0')
+        ? '62' + cleanWa.substring(1)
+        : '62' + cleanWa;
+    return `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Ibu%20Lia%20(SDIP%20Al-Hambra),%20saya%20ingin%20tanya%20mengenai%20pendaftaran%20PPDB.`;
   };
 
   return (

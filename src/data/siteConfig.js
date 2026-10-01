@@ -28,7 +28,7 @@ export const siteConfig = {
   },
 
   contact: {
-    whatsapp: "895329120461",
+    whatsapp: "0895-3291-20461 (Ibu Lia)",
     phone: "02172780139",
     email: "info@sdipalhambra.sch.id",
     address: "JL. Kubur Islam Rt. 10 Rw. 10 No. 55A Grogol Selatan, Kebayoran Lama,Jakarta Selatan",

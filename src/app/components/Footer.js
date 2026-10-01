@@ -8,8 +8,12 @@ import { siteConfig } from '../../data/siteConfig';
 export default function Footer() {
   const getWaLink = () => {
     const cleanWa = siteConfig.contact.whatsapp.replace(/\D/g, '');
-    const waNumber = cleanWa.startsWith('0') ? '62' + cleanWa.substring(1) : cleanWa;
-    return `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Admin%20SDIP%20Al-Hambra,%20saya%20ingin%20tanya%20mengenai%20sekolah.`;
+    const waNumber = cleanWa.startsWith('62')
+      ? cleanWa
+      : cleanWa.startsWith('0')
+        ? '62' + cleanWa.substring(1)
+        : '62' + cleanWa;
+    return `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Ibu%20Lia%20(SDIP%20Al-Hambra),%20saya%20ingin%20tanya%20mengenai%20sekolah.`;
   };
 
   return (
@@ -57,7 +61,7 @@ export default function Footer() {
               <li className={styles.contactItem}>
                 <MessageSquare size={18} className={styles.contactIcon} />
                 <a href={getWaLink()} target="_blank" rel="noopener noreferrer">
-                  {siteConfig.contact.whatsapp} (WhatsApp)
+                  {siteConfig.contact.whatsapp}
                 </a>
               </li>
               <li className={styles.contactItem}>

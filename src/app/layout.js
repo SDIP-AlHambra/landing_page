@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: siteConfig.contact.whatsapp,
+      telephone: '+62' + siteConfig.contact.whatsapp.replace(/\D/g, '').replace(/^(62|0)/, ''),
       contactType: 'PPDB Admission',
     },
   };

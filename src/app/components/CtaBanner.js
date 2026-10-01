@@ -8,8 +8,12 @@ import { siteConfig } from '../../data/siteConfig';
 export default function CtaBanner() {
   const getVisitWaLink = () => {
     const cleanWa = siteConfig.contact.whatsapp.replace(/\D/g, '');
-    const waNumber = cleanWa.startsWith('0') ? '62' + cleanWa.substring(1) : cleanWa;
-    return `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Admin%20SDIP%20Al-Hambra,%20saya%20ingin%20menjadwalkan%20kunjungan%20ke%20sekolah.`;
+    const waNumber = cleanWa.startsWith('62')
+      ? cleanWa
+      : cleanWa.startsWith('0')
+        ? '62' + cleanWa.substring(1)
+        : '62' + cleanWa;
+    return `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Ibu%20Lia%20(SDIP%20Al-Hambra),%20saya%20ingin%20menjadwalkan%20kunjungan%20ke%20sekolah.`;
   };
 
   return (

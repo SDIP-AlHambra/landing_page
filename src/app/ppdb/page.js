@@ -39,9 +39,13 @@ export const revalidate = 0;
 
 export default function PpdbPage() {
   const cleanWa = siteConfig.contact.whatsapp.replace(/\D/g, '');
-  const waNumber = cleanWa.startsWith('0') ? '62' + cleanWa.substring(1) : cleanWa;
-  const waConsultationLink = `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Admin%20PPDB%20SDIP%20Al-Hambra,%20saya%20ingin%20berkonsultasi%20mengenai%20pendaftaran%20PPDB%20siswa%20baru.`;
-  const waVisitLink = `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Admin%20SDIP%20Al-Hambra,%20saya%20ingin%20menjadwalkan%20kunjungan%20ke%20sekolah%20terkait%20PPDB.`;
+  const waNumber = cleanWa.startsWith('62')
+    ? cleanWa
+    : cleanWa.startsWith('0')
+      ? '62' + cleanWa.substring(1)
+      : '62' + cleanWa;
+  const waConsultationLink = `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Ibu%20Lia%20(PPDB%20SDIP%20Al-Hambra),%20saya%20ingin%20berkonsultasi%20mengenai%20pendaftaran%20PPDB%20siswa%20baru.`;
+  const waVisitLink = `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Ibu%20Lia%20(SDIP%20Al-Hambra),%20saya%20ingin%20menjadwalkan%20kunjungan%20ke%20sekolah%20terkait%20PPDB.`;
 
   return (
     <>
