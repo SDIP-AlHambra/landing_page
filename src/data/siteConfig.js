@@ -1,7 +1,32 @@
 export const siteConfig = {
   name: "SDIP Al-Hambra",
   tagline: "Membentuk Generasi Qur'ani, Cerdas, dan Berkarakter",
-  ppdbLink: "#pendaftaran",
+  ppdbLink: "/ppdb",
+  
+  // =========================================================================
+  // PENGATURAN PPDB (PENDAFTARAN PESERTA DIDIK BARU)
+  // =========================================================================
+  ppdb: {
+    // Silakan masukkan/ganti link Google Form PPDB Anda di bawah ini:
+    googleFormUrl: "https://forms.gle/contohLinkGoogleFormPPDB",
+    
+    // Daftar gambar brosur PPDB (dari folder public/image/browser)
+    brochures: [
+      {
+        id: 1,
+        title: "Brosur Halaman 1",
+        label: "Halaman 1 - Profil & Program Unggulan",
+        image: "/image/browser/Brosur Hal 1.jpeg",
+      },
+      {
+        id: 2,
+        title: "Brosur Halaman 2",
+        label: "Halaman 2 - Alur & Persyaratan Pendaftaran",
+        image: "/image/browser/Brosur Hal 2.jpeg",
+      },
+    ],
+  },
+
   contact: {
     whatsapp: "895329120461",
     phone: "02172780139",

@@ -82,6 +82,37 @@
   flex-wrap: wrap;
 }
 
+.ppdbPageButtonContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ppdbPageBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.5);
+  padding: 0.8rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(6px);
+}
+
+.ppdbPageBtn:hover {
+  background: rgba(197, 160, 89, 0.25);
+  border-color: var(--gold);
+  color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 768px) {
   .bannerCard {
     padding: 3rem 2rem;
@@ -98,5 +129,13 @@
   .buttonGroup {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .ppdbPageBtn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
   }
 }

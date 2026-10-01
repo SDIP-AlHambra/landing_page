@@ -64,14 +64,12 @@ export default function Navbar() {
             Berita
           </Link>
           <Link href="/#kontak" className={styles.navLink}>Kontak</Link>
-          <a
-            href={getWaLink()}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/ppdb"
             className="btn btn-gold"
           >
             Daftar PPDB
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -93,16 +91,14 @@ export default function Navbar() {
           <Link href="/#ekskul" className={styles.mobileNavLink} onClick={toggleMenu}>Ekskul</Link>
           <Link href="/berita" className={styles.mobileNavLink} onClick={toggleMenu}>Berita & Kegiatan</Link>
           <Link href="/#kontak" className={styles.mobileNavLink} onClick={toggleMenu}>Kontak</Link>
-          <a
-            href={getWaLink()}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/ppdb"
             className="btn btn-gold"
             onClick={toggleMenu}
-            style={{ marginTop: '1rem', width: '100%' }}
+            style={{ marginTop: '1rem', width: '100%', textAlign: 'center' }}
           >
             Daftar PPDB
-          </a>
+          </Link>
         </div>
       )}
     </nav>

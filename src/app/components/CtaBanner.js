@@ -1,14 +1,15 @@
 "use client";
 import React from 'react';
-import { MessageCircle, Calendar } from 'lucide-react';
+import Link from 'next/link';
+import { Calendar, FileText, BookOpen, ArrowRight } from 'lucide-react';
 import styles from './CtaBanner.module.css';
 import { siteConfig } from '../../data/siteConfig';
 
 export default function CtaBanner() {
-  const getWaLink = () => {
+  const getVisitWaLink = () => {
     const cleanWa = siteConfig.contact.whatsapp.replace(/\D/g, '');
     const waNumber = cleanWa.startsWith('0') ? '62' + cleanWa.substring(1) : cleanWa;
-    return `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Admin%20SDIP%20Al-Hambra,%20saya%20ingin%20tanya%20mengenai%20pendaftaran%20PPDB%20tahun%20ajaran%20baru.`;
+    return `https://wa.me/${waNumber}?text=Assalamu%27alaikum%20Admin%20SDIP%20Al-Hambra,%20saya%20ingin%20menjadwalkan%20kunjungan%20ke%20sekolah.`;
   };
 
   return (
@@ -20,25 +21,41 @@ export default function CtaBanner() {
             <span className={styles.badge}>PENDAFTARAN PPDB DIBUKA</span>
             <h2 className={styles.title}>Mari Bergabung Bersama Keluarga Besar <br />SDIP Al-Hambra</h2>
             <p className={styles.description}>
-              Berikan pendidikan terbaik untuk buah hati Anda. Kuota sangat terbatas (maksimal 24 siswa per kelas) untuk menjaga efektivitas pembelajaran Al-Qur'an dan bimbingan akhlak. Hubungi admin kami sekarang untuk informasi pendaftaran dan biaya.
+              Berikan pendidikan terbaik untuk buah hati Anda. Kuota sangat terbatas (maksimal 24 siswa per kelas) untuk menjaga efektivitas pembelajaran Al-Qur'an dan bimbingan akhlak. Silakan isi formulir pendaftaran online atau pelajari informasi lengkap PPDB melalui brosur kami.
             </p>
+            
+            {/* Top 2 Buttons: Google Form & Schedule Visit via WhatsApp */}
             <div className={styles.buttonGroup}>
               <a
-                href={getWaLink()}
+                href={siteConfig.ppdb.googleFormUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-gold"
+                title="Buka Formulir Pendaftaran PPDB"
               >
-                <MessageCircle size={20} fill="currentColor" /> Hubungi Admin WA
+                <FileText size={20} /> Isi Formulir Pendaftaran
               </a>
               <a
-                href={getWaLink()}
+                href={getVisitWaLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline-gold"
+                title="Jadwalkan Kunjungan via WhatsApp"
               >
                 <Calendar size={20} /> Jadwalkan Kunjungan
               </a>
+            </div>
+
+            {/* Dedicated PPDB Page Button Below */}
+            <div className={styles.ppdbPageButtonContainer}>
+              <Link
+                href="/ppdb"
+                className={styles.ppdbPageBtn}
+              >
+                <BookOpen size={18} />
+                <span>Lihat Brosur & Informasi Lengkap PPDB</span>
+                <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </div>

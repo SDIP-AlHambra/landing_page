@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import Typed from 'typed.js';
 import { ArrowRight } from 'lucide-react';
 import styles from './Hero.module.css';
@@ -50,9 +51,9 @@ export default function Hero() {
               {siteConfig.tagline}. {heroData.vision} Kami bertekad mendidik tunas bangsa berlandaskan Al-Qur'an dan Sunnah, menanamkan akhlak mulia, serta membekali anak dengan kecerdasan emosional, spiritual, dan intelektual.
             </p>
             <div className={styles.ctaGroup}>
-              <a href={getWaLink()} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              <Link href="/ppdb" className="btn btn-primary">
                 Daftar PPDB <ArrowRight size={18} />
-              </a>
+              </Link>
               <a href="#visi-misi" className="btn btn-outline">
                 Pelajari Lebih Lanjut
               </a>

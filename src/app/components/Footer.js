@@ -41,6 +41,7 @@ export default function Footer() {
               <li><Link href="/#fasilitas">Fasilitas</Link></li>
               <li><Link href="/#ekskul">Ekstrakurikuler</Link></li>
               <li><Link href="/berita">Berita & Kegiatan</Link></li>
+              <li><Link href="/ppdb">PPDB (Pendaftaran)</Link></li>
               <li><Link href="/#kontak">Hubungi Kami</Link></li>
             </ul>
           </div>
