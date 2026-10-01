@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { 
-  FileText, 
-  MessageCircle, 
-  Calendar, 
-  MapPin, 
-  Clock, 
-  CheckCircle2, 
+import {
+  FileText,
+  MessageCircle,
+  Calendar,
+  MapPin,
+  Clock,
+  CheckCircle2,
   Sparkles,
   ChevronRight,
   ExternalLink
@@ -67,7 +67,7 @@ export default function PpdbPage() {
                 <span className={styles.highlight}>{siteConfig.name}</span>
               </h1>
               <p className={styles.subtitle}>
-                Membentuk generasi Qur'ani yang berakhlak mulia, cerdas, mandiri, dan berwawasan luas. 
+                Membentuk generasi Qur'ani yang berakhlak mulia, cerdas, mandiri, dan berwawasan luas.
                 Kuota terbatas maksimal 24 siswa per kelas untuk menjamin kualitas bimbingan terbaik bagi putra-putri Anda.
               </p>
             </div>
@@ -190,7 +190,7 @@ export default function PpdbPage() {
                 <div className={styles.infoIconWrapper}>
                   <MapPin size={24} color="var(--gold)" />
                 </div>
-                <h3>Lokasi Kampus</h3>
+                <h3>Lokasi Sekolah</h3>
                 <p>{siteConfig.contact.address}</p>
               </div>
             </div>

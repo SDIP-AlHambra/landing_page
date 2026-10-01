@@ -35,3 +35,4 @@ export const eskul = [
     image: "/image/eskul/eskul_melukis.jpg"
   }
 ];
+
