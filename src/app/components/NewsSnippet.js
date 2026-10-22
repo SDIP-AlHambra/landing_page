@@ -6,7 +6,8 @@ import { urlFor } from '@/sanity/client';
 import { getTopNewsSnippets, categoryMap, formatDate } from '@/sanity/queries';
 
 export default async function NewsSnippet() {
-  const posts = await getTopNewsSnippets(3);
+  const allPosts = await getTopNewsSnippets(3);
+  const posts = (allPosts || []).slice(0, 3);
 
   if (!posts || posts.length === 0) {
     return null;

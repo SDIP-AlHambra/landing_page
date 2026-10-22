@@ -2,14 +2,14 @@ export const siteConfig = {
   name: "SDIP Al-Hambra",
   tagline: "Membentuk Generasi Qur'ani, Cerdas, dan Berkarakter",
   ppdbLink: "/ppdb",
-  
+
   // =========================================================================
   // PENGATURAN PPDB (PENDAFTARAN PESERTA DIDIK BARU)
   // =========================================================================
   ppdb: {
     // Silakan masukkan/ganti link Google Form PPDB Anda di bawah ini:
-    googleFormUrl: "https://forms.gle/contohLinkGoogleFormPPDB",
-    
+    googleFormUrl: "https://forms.gle/x74ZiCiqFfhfTc8i6",
+
     // Daftar gambar brosur PPDB (dari folder public/image/browser)
     brochures: [
       {
