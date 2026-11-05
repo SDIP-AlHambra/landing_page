@@ -15,7 +15,7 @@ export const statsData = [
   },
   {
     id: 3,
-    value: "24",
+    value: "20",
     suffix: " Siswa",
     label: "Maksimal per Kelas",
     description: "Pembelajaran kondusif & fokus"
