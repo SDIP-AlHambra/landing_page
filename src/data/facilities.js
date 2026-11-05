@@ -16,30 +16,6 @@ export const facilities = [
     description: "Membekali peserta didik dengan kecakapan teknologi modern (IPTEK)"
   },
   {
-    id: "lab-komputer",
-    title: "Lab Komputer",
-    image: "/image/fasilitas/lab_komputer.jpeg",
-    quote: '"Allah akan meninggikan orang-orang yang beriman di antaramu..."',
-    sumber_quote: "(QS. Al-Mujadilah: 11)",
-    description: "Membekali peserta didik dengan kecakapan teknologi modern (IPTEK)"
-  },
-  {
-    id: "lab-komputer",
-    title: "Lab Komputer",
-    image: "/image/fasilitas/lab_komputer.jpeg",
-    quote: '"Allah akan meninggikan orang-orang yang beriman di antaramu..."',
-    sumber_quote: "(QS. Al-Mujadilah: 11)",
-    description: "Membekali peserta didik dengan kecakapan teknologi modern (IPTEK)"
-  },
-  {
-    id: "lab-komputer",
-    title: "Lab Komputer",
-    image: "/image/fasilitas/lab_komputer.jpeg",
-    quote: '"Allah akan meninggikan orang-orang yang beriman di antaramu..."',
-    sumber_quote: "(QS. Al-Mujadilah: 11)",
-    description: "Membekali peserta didik dengan kecakapan teknologi modern (IPTEK)"
-  },
-  {
     id: "kolam-renang",
     title: "Kolam Renang",
     image: "/image/fasilitas/kolam_renang.png",
