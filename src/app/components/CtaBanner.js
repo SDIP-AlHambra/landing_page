@@ -25,9 +25,9 @@ export default function CtaBanner() {
             <span className={styles.badge}>PENDAFTARAN PPDB DIBUKA</span>
             <h2 className={styles.title}>Mari Bergabung Bersama Keluarga Besar <br />SDIP Al-Hambra</h2>
             <p className={styles.description}>
-              Berikan pendidikan terbaik untuk buah hati Anda. Kuota sangat terbatas (maksimal 24 siswa per kelas) untuk menjaga efektivitas pembelajaran Al-Qur'an dan bimbingan akhlak. Silakan isi formulir pendaftaran online atau pelajari informasi lengkap PPDB melalui brosur kami.
+              Berikan pendidikan terbaik untuk buah hati Anda. Kuota sangat terbatas (maksimal 20 siswa per kelas) untuk menjaga efektivitas pembelajaran Al-Qur'an dan bimbingan akhlak. Silakan isi formulir pendaftaran online atau pelajari informasi lengkap PPDB melalui brosur kami.
             </p>
-            
+
             {/* Top 2 Buttons: Google Form & Schedule Visit via WhatsApp */}
             <div className={styles.buttonGroup}>
               <a

@@ -22,7 +22,7 @@ export const metadata = {
   description: `Informasi resmi Penerimaan Peserta Didik Baru (PPDB) ${siteConfig.name}. Lihat brosur lengkap, syarat pendaftaran, dan isi formulir pendaftaran online.`,
   openGraph: {
     title: `Pendaftaran PPDB - ${siteConfig.name}`,
-    description: `Penerimaan Peserta Didik Baru (PPDB) ${siteConfig.name}. Kuota terbatas 24 siswa per kelas.`,
+    description: `Penerimaan Peserta Didik Baru (PPDB) ${siteConfig.name}. Kuota terbatas 20 siswa per kelas.`,
     images: [
       {
         url: '/apple-touch-icon.png',
@@ -72,7 +72,7 @@ export default function PpdbPage() {
               </h1>
               <p className={styles.subtitle}>
                 Membentuk generasi Qur'ani yang berakhlak mulia, cerdas, mandiri, dan berwawasan luas.
-                Kuota terbatas maksimal 24 siswa per kelas untuk menjamin kualitas bimbingan terbaik bagi putra-putri Anda.
+                Kuota terbatas maksimal 20 siswa per kelas untuk menjamin kualitas bimbingan terbaik bagi putra-putri Anda.
               </p>
             </div>
           </div>
@@ -179,7 +179,7 @@ export default function PpdbPage() {
                   <CheckCircle2 size={24} color="var(--gold)" />
                 </div>
                 <h3>Keunggulan Kelas</h3>
-                <p>Maksimal 24 siswa per kelas dengan 2 pendidik di kelas awal untuk pendampingan tahfizh dan karakter yang optimal.</p>
+                <p>Maksimal 20 siswa per kelas dengan 2 pendidik di kelas awal untuk pendampingan tahfizh dan karakter yang optimal.</p>
               </div>
 
               <div className={styles.infoCard}>
